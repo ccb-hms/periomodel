@@ -1,0 +1,26 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "2cf134c259ef555b1a4891ef0d73fab5992076b76995ebb4da97d9532361c19f"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_full_version": "3.11.8",
+            "python_version": "3.11"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "periomodel": {
+            "editable": true,
+            "file": "."
+        }
+    },
+    "develop": {}
+}
