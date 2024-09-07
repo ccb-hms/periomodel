@@ -5,8 +5,27 @@ name = "pypi"
 
 [packages]
 periomodel = {file = ".", editable = true}
+setuptools-scm = "*"
+pandas = "*"
+pyarrow = "*"
+fastparquet = "*"
+scikit-learn = "*"
+scikit-image = "*"
+opencv-python = "*"
+tqdm = "*"
+torch = "*"
+torchvision = "*"
+torchaudio = "*"
+albumentations = "*"
+lightning = "*"
+grad-cam = "*"
+torchxrayvision = "*"
 
 [dev-packages]
+jupyterlab = "*"
+ipywidgets = "*"
+matplotlib = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.11"
