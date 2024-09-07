@@ -20,6 +20,7 @@ albumentations = "*"
 lightning = "*"
 grad-cam = "*"
 torchxrayvision = "*"
+pydicom = "*"
 
 [dev-packages]
 jupyterlab = "*"
