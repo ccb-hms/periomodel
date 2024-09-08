@@ -1,6 +1,6 @@
 FROM python:3.11 AS base
 
-ARG DEV_cadence
+ARG DEV_periomodel
 
 ENV \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -21,13 +21,23 @@ EXPOSE 8888
 RUN mkdir -p /app
 WORKDIR /app
 
+# System dependencies
+RUN apt-get update -y && \
+        apt-get install -y \
+        'libsndfile1' \
+        'libgl1-mesa-glx' \
+        'ffmpeg' \
+        'libsm6' \
+        'libxext6' \
+        'ninja-build'
+
 # Pip and pipenv
 RUN pip install --upgrade pip
 RUN pip install pipenv
 
 # Some package stuff
 COPY setup.py ./
-COPY src/cadence/__init__.py src/cadence/__init__.py
+COPY src/periomodel/__init__.py src/periomodel/__init__.py
 
 # Install dependencies
 COPY Pipfile Pipfile.lock ./

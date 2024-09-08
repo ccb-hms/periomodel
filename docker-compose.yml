@@ -1,14 +1,14 @@
 version: "3.8"
 services:
   app:
-    image: cadence:01
-    container_name: cadence
+    image: periomodel:01
+    container_name: periomodel
     build: 
       context: .
       network: host
       dockerfile: Dockerfile
       args:
-        - DEV_cadence=1
+        - DEV_periomodel=1
     ipc: host
     environment:
     #- AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
@@ -19,4 +19,4 @@ services:
       - "8888:8888"
     volumes:
       - .:/app
-      - $HOME/data:/app/data
+      - $HOME/data/dcmdata:/app/data
