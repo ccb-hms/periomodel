@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-periomodel = {file = ".", editable = true}
 setuptools-scm = "*"
 pandas = "*"
 pyarrow = "*"
@@ -21,6 +20,7 @@ lightning = "*"
 grad-cam = "*"
 torchxrayvision = "*"
 pydicom = "*"
+periomodel = {file = ".", editable = true}
 
 [dev-packages]
 jupyterlab = "*"
