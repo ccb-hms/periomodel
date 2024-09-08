@@ -1,0 +1,33 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+setuptools-scm = "*"
+pandas = "*"
+pyarrow = "*"
+fastparquet = "*"
+scikit-learn = "*"
+scikit-image = "*"
+opencv-python = "*"
+tqdm = "*"
+torch = "*"
+torchvision = "*"
+torchaudio = "*"
+albumentations = "*"
+lightning = "*"
+grad-cam = "*"
+torchxrayvision = "*"
+pydicom = "*"
+periomodel = {file = ".", editable = true}
+
+[dev-packages]
+jupyterlab = "*"
+ipywidgets = "*"
+matplotlib = "*"
+seaborn = "*"
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.8"
