@@ -4,27 +4,22 @@
 
 ## Estimating Periodontal Stability Using Computer Vision ## 
 
-This repository contains the complete code base that was used to 
-train and evaluate the periodontal stability model as described in [1].
-The following notebooks are provided to demonstrate how the model is used
+This repository contains the code for the periodontal stability model as described in [[1]](#1).
+The following notebooks are provided to demonstrate how to use the code 
 to predict the disease classes on the test cases.
 
-- [Download model weights and test images](./notebooks/01-download-data.ipynb)
+- [Download test dataset and model checkpoint](./notebooks/01-download-data.ipynb)
 - [Run the model on the test data](./notebooks/02-run-model.ipynb)
 
 The execution of the notebooks require model weights and test data which can
-be downloaded from an S3 bucket. Contact 
-the authors of the manuscript to request access to the data.
-
+be downloaded. Contact the authors of the manuscript to request access to the data.
 ## Installation with Docker ##
-The most convenient way to get started with this repository is to run the 
-notebooks in a [Docker](https://docs.docker.com/) container. 
-The included [Dockerfile](Dockerfile) builds a container image with a reproducible Python 
-development environment. The docker image is based on 
+The most convenient way to get started with this repository is with [Docker](https://docs.docker.com/). 
+The included [Dockerfile](Dockerfile) builds a container image with a reproducible Python environment. The docker image is based on 
 Debian GNU Linux distribution with Python 3.11.9. All libraries that were 
 used to train and evaluate the model are included in the docker image.
 
-Here's a step-by-step guide on how to use this setup:
+Here's a step-by-step guide on how to get started:
 
 1. Install [Docker](https://docs.docker.com/) on your machine.
 2. Clone the GitHub project repository to download the contents of the repository:
@@ -32,10 +27,8 @@ Here's a step-by-step guide on how to use this setup:
 # Clone the repository in the local environment
 git clone git@github.com:ccb-hms/periomodel.git
 ```
-3. Navigate to the repository's directory to change your current directory to the repository's 
-directory.
-4. Build the Docker image. Use the command `docker compose build` to build a Docker image from the 
-Dockerfile in the current directory. 
+3. Change into the repository's directory directory.
+4. Build the Docker image from the `Dockerfile` using the `docker compose build` command: 
 ```bash
 # Change into the repository's directory
 cd periomodel
@@ -43,16 +36,15 @@ cd periomodel
 docker compose build
 ```
 5. Edit the last line in the `docker-compose.yml` file to map a local data directory (for example: 
-`/user/username/data` to the container image:
-the container:
-```aiignore
+`/user/username/data` to the container at runtime:
+```bash
 # Edit the last section of the docker-compose.yml file
 volumes:
       - .:/app
       - /user/username/data:/app/data
 ```
-6. Run `docker compose up` to start the Docker container based on the configurations 
-in the docker-compose.yml.
+6. Use the `docker compose up` command to run the Docker container based on the configurations 
+in the `docker-compose.yml` file.
 ```bash
 docker compose up
 ```
@@ -61,36 +53,37 @@ from a browser by clicking on the link displayed.
 
 ### GPU support for Docker ###
 
-The container does not require a GPU to run, but the `docker-compose.yml` file can be
-modified to allow access to the GPU driver from inside the container.
-For detailed instructions on how to set this up, refer to the 
-[Docker documentation](https://docs.docker.com/compose/gpu-support/). The NVIDIA Container Toolkit is a set of tools designed to enable GPU-accelerated applications to run 
-within Docker containers. It facilitates the integration of NVIDIA GPUs with container runtimes, 
-allowing developers and data scientists to harness the power of GPU computing in containerized environments.
-See the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) page for installation instructions.
+The container does not require a hardware accelerator (GPU) to run, but the `docker-compose.yml` file can be
+modified accordingly to permit access to a GPU driver from inside the container.
+For detailed instructions on how to set this up, refer to the [Docker documentation](https://docs.docker.com/compose/gpu-support/). 
+To enable GPU access, 
+the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) 
+is needed. The software provides a set of tools designed to enable GPU-accelerated applications to run 
+within Docker containers. See the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) page for installation instructions.
 
 ## Installation without Docker ##
 
-For installation in a local environment we provide [Pipfile](Pipfile) and [Pipfile.lock](Pipfile.lock) files 
-which are used to produce deterministic builds. These file are needed by
-[Pipenv](https://pipenv.pypa.io/en/latest/index.html), a Python virtualenv management tool that
-integrates pipenv and virtualenv.
+To install the python package into a local environment we provide [Pipfile](Pipfile) and [Pipfile.lock](Pipfile.lock) files 
+which produce deterministic builds. These file require [Pipenv](https://pipenv.pypa.io/en/latest/index.html), a convenient
+python virtualenv management app that integrates pipenv and virtualenv.
 ```bash
 # Create a pipenv environment with all dependencies
-pipenv install -e . --dev
-# Run jupyter lab using the docker entry script
+pipenv install -e . 
+# Then, install development dependencies [dev-packages]
+pipenv install --dev
+# Run the jupyter lab server using the docker entry script
 pipenv run ./bash_scripts/docker_entry
 ```
-The notebooks use an environment variable called `DATA_ROOT` to keep track of the 
-location of the data files. For use with a docker container, the variable is defined in the Dockerfile
-as `DATA_ROOT=/app/data` (see above). When using Pipenv as package manager, it is 
-defined in the [.env](.env) file which is automatically loaded into the environment after activation.
+The notebooks use an environment variable called `DATA_ROOT` to provide a  
+location for data files. For use with the container, the folder mapping is defined in the `docker-compose.yml` file
+under the `volumes` section, as described [above](#Installation with Docker). When using Pipenv as package manager, the `DATA_ROOT` variable is 
+defined within the [.env](.env) file and automatically exported into the environment after activation.
 
 ## Annotation of dental radiographs ##
 
 [Label Studio](https://labelstud.io/) is an open-source data labeling tool for labeling, annotating, 
 and exploring many different data types. Additionally, the tool includes 
-a powerful machine learning interface that can be used for new model training, 
+a machine learning interface that can be used for new model training, 
 active learning, supervised learning, and many other training techniques.
 
 1. Multi-type annotations: Label Studio supports multiple types of annotations, including labeling for audio, video, images, text, and time series data. These annotations can be used for tasks such as object detection, semantic segmentation, and text classification among others.
@@ -105,5 +98,11 @@ active learning, supervised learning, and many other training techniques.
 
 ### How to Use Label Studio
 The tool is included in this repository as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
-Please see the [CCB Computervision Repository](https://github.com/ccb-hms/computervision) 
+Please refer to the [CCB Computervision Repository](https://github.com/ccb-hms/computervision) or the orignal 
+[repository](https://github.com/HumanSignal/label-studio) for
 installation instructions.
+---
+## References
+<a id="1">[1]</a> 
+Feher B, Werdich AA, Chen CY, Barrow J, Lee SJ, Palmer N, Feres M  
+*Estimating Periodontal Stability Using Computer Vision*
