@@ -97,11 +97,9 @@ active learning, supervised learning, and many other training techniques.
 6. Scalability: Label Studio can be deployed in any environment, be it on a local machine or in a distributed setting, making it a scalable solution.
 
 ### How to Use Label Studio ###
+This tool is included here as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+Please refer to the original [Label Studio repository](https://github.com/HumanSignal/label-studio) for installation instructions.
 
-The tool is included in this repository as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
-Please refer to the [CCB Computervision Repository](https://github.com/ccb-hms/computervision) or the orignal 
-[repository](https://github.com/HumanSignal/label-studio) for
-installation instructions.
 ---
 ## References
 <a id="1">[1]</a> 
