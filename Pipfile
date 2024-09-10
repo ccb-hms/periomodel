@@ -25,6 +25,7 @@ pytest = "*"
 pytest-cov = "*"
 tox = "*"
 exceptiongroup = "*"
+tomli = "*"
 
 [dev-packages]
 jupyterlab = "*"
