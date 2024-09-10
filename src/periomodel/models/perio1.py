@@ -3,6 +3,7 @@ Periodontal Disease Model Ver 1
 Andreas Werdich
 Center for Computational Biomedicine
 """
+from __future__ import annotations
 
 import logging
 from typing import Any, Dict, List, Optional, Tuple, Union
