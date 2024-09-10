@@ -117,6 +117,10 @@ making it a scalable solution.
 ### How to Use Label Studio ###
 The labeling software is included here as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 Please refer to the original [Label Studio repository](https://github.com/HumanSignal/label-studio) for installation instructions.
+We have created a [custom labeling interface](src/periomodel/labelinterface/label_interface_4.html) for 
+the periodontal disease radiograph data. 
+See [instructions](https://labelstud.io/tags/#Create-a-custom-labeling-configuration) on how to
+create a custom labeling configuration with Label Studio.
 
 ---
 ## References
