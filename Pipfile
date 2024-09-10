@@ -24,6 +24,7 @@ periomodel = {file = ".", editable = true}
 pytest = "*"
 pytest-cov = "*"
 tox = "*"
+exceptiongroup = "*"
 
 [dev-packages]
 jupyterlab = "*"
