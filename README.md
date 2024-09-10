@@ -18,8 +18,8 @@ https://github.com/ccb-hms/periomodel/actions/workflows/docker.yml)
 ## Estimating Periodontal Stability Using Computer Vision ## 
 
 This repository contains the code for the periodontal stability model as described in [[1]](#1).
-The following notebooks are provided to demonstrate how to use the code 
-to predict the disease classes on the test cases.
+The following notebooks are provided to demonstrate how to use the model 
+and to predict the disease classes on the test cases.
 
 - [Download test dataset and model checkpoint](./notebooks/01-download-data.ipynb)
 - [Run the model on the test data](./notebooks/02-run-model.ipynb)
