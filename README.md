@@ -5,10 +5,10 @@ https://pyscaffold.org/)
 https://img.shields.io/badge/python-3.11.8-blue.svg)](
 https://www.python.org/downloads/release/python-3118/)
 [![pytest](
-https://github.com/ccb-hms/periomodel/actions/workflows/pytest.yml/badge.svg?branch=develop)](
+https://github.com/ccb-hms/periomodel/actions/workflows/pytest.yml/badge.svg?branch=main)](
 https://github.com/ccb-hms/periomodel/actions/workflows/pytest.yml)
 [![docker](
-https://github.com/ccb-hms/periomodel/actions/workflows/docker.yml/badge.svg?branch=develop)](
+https://github.com/ccb-hms/periomodel/actions/workflows/docker.yml/badge.svg?branch=main)](
 https://github.com/ccb-hms/periomodel/actions/workflows/docker.yml)
 
 <p float="left">
