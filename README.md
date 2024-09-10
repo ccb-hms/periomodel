@@ -12,7 +12,7 @@ https://github.com/ccb-hms/periomodel/actions/workflows/docker.yml/badge.svg?bra
 https://github.com/ccb-hms/periomodel/actions/workflows/docker.yml)
 
 <p float="left">
-    <img style="vertical-align: top" src="./images/HMS_DBMI_Logo.png" width="50%" />
+    <img style="vertical-align: top" src="./images/tooth1.jpeg" width="20%" />
 </p>
 
 ## Estimating Periodontal Stability Using Computer Vision ## 
