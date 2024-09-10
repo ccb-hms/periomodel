@@ -20,12 +20,12 @@ lightning = "*"
 grad-cam = "*"
 torchxrayvision = "*"
 pydicom = "*"
-periomodel = {file = ".", editable = true}
 pytest = "*"
 pytest-cov = "*"
 tox = "*"
 exceptiongroup = "*"
 tomli = "*"
+periomodel = {file = ".", editable = true}
 
 [dev-packages]
 jupyterlab = "*"
