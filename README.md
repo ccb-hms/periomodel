@@ -1,3 +1,16 @@
+[![Pyscaffold](
+https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold)](
+https://pyscaffold.org/)
+[![Python 3.11.8](
+https://img.shields.io/badge/python-3.11.8-blue.svg)](
+https://www.python.org/downloads/release/python-3118/)
+[![pytest](
+https://github.com/ccb-hms/periomodel/actions/workflows/pytest.yml/badge.svg?branch=develop)](
+https://github.com/ccb-hms/periomodel/actions/workflows/pytest.yml)
+[![docker](
+https://github.com/ccb-hms/periomodel/actions/workflows/docker.yml/badge.svg?branch=develop)](
+https://github.com/ccb-hms/periomodel/actions/workflows/docker.yml)
+
 <p float="left">
     <img style="vertical-align: top" src="./images/HMS_DBMI_Logo.png" width="50%" />
 </p>
@@ -86,18 +99,23 @@ and exploring many different data types. Additionally, the tool includes
 a machine learning interface that can be used for new model training, 
 active learning, supervised learning, and many other training techniques.
 
-1. Multi-type annotations: Label Studio supports multiple types of annotations, including labeling for audio, video, images, text, and time series data. These annotations can be used for tasks such as object detection, semantic segmentation, and text classification among others.
+1. Multi-type annotations: Label Studio supports multiple types of annotations, including labeling for audio, 
+video, images, text, and time series data. These annotations can be used for tasks such as object detection, 
+semantic segmentation, and text classification among others.
 2. Customizable: The label interface can be customized using a configuration API.
 
 <img src="./images/LabelInterface.png" width="70%" height="70%"/>
 
-3. Machine Learning backend: Label Studio allows integration with machine learning models. You can pre-label data using model predictions and then manually adjust the results.
-4. Data Import and Export: Label Studio supports various data sources for import and export. You can import data from Amazon S3, Google Cloud Storage, or a local file system, and export it in popular formats like COCO, Pascal VOC, or YOLO.
-5. Collaboration: It supports multiple users, making it suitable for collaborative projects.
-6. Scalability: Label Studio can be deployed in any environment, be it on a local machine or in a distributed setting, making it a scalable solution.
+3. Machine Learning backend: Label Studio allows integration with machine learning models. 
+4. Data Import and Export: Label Studio supports various data sources for import and export. 
+Data can be imported from Amazon S3, Google Cloud Storage, or a local file system. Export formats include 
+popular formats like COCO, Pascal VOC, or YOLO.
+5. Collaboration: The program supports multiple users, making it suitable for collaborative projects.
+6. Scalability: Label Studio can be deployed in any environment, be it on a local machine or in a distributed setting, 
+making it a scalable solution.
 
 ### How to Use Label Studio ###
-This tool is included here as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+The labeling software is included here as a [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 Please refer to the original [Label Studio repository](https://github.com/HumanSignal/label-studio) for installation instructions.
 
 ---
