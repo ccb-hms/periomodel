@@ -1,4 +1,4 @@
-FROM python:3.11 AS base
+FROM python:3.12.13 AS base
 
 ARG DEV_periomodel
 
@@ -23,12 +23,11 @@ WORKDIR /app
 
 # System dependencies
 RUN apt-get update -y && \
-        apt-get install -y \
-        'libsndfile1' \
-        'libgl1-mesa-glx' \
-        'ffmpeg' \
-        'libsm6' \
-        'libxext6' \
+         apt-get install -y \
+         'libsndfile1' \
+         'ffmpeg' \
+         'libsm6' \
+         'libxext6' \
         'ninja-build'
 
 # Pip and pipenv
